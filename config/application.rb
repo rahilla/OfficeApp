@@ -11,6 +11,8 @@ end
 
 module OfficeApp
   class Application < Rails::Application
+    ###adding for devise, setting to false for devise and heroku deployment
+    config.assets.initialize_on_precompile = false
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
