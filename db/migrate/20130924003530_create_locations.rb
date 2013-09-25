@@ -7,6 +7,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :city
       t.string :country
       t.string :url
+      t.string :email
       t.string :phone
 
 
