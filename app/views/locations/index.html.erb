@@ -1,0 +1,9 @@
+<h2>Locations</h2>
+
+<ul>
+<%- @locations.each do |location| %>
+    <li><%= location.city %></li>
+    <li><%= location.country %></li>
+<% end %>
+</ul>
+
