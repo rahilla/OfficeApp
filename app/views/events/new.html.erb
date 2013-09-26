@@ -1,0 +1,45 @@
+<h2>Create an Event</h2>
+<%= form_for @post do |form| %>
+Sponsor:
+  <br>
+  <%= form.text_field :sponsor %>
+  <br>
+  Organizer:
+  <br>
+  <%= form.text_field :organizer %>
+  <br>
+  Venue:
+  <br>
+  <%= form.text_field :venue %>
+  <br>
+  Address:
+  <br>
+  <%= form.text_field :address %>
+  <br>
+  City:
+  <br>
+  <%= form.text_field :city %>
+  <br>
+  Country:
+  <br>
+  <%= form.text_field :country %>
+  <br>
+  Url:
+  <br>
+  <%= form.text_field :url %>
+  <br>
+  Email:
+  <br>
+  <%= form.text_field :email %>
+  <br>
+  Phone:
+  <br>
+  <%= form.text_field :phone %>
+  <br>
+  Additional Comments:
+  <br>
+  <%= form.text_area :email, :rows => 8, :cols => 60 %>
+  <br>
+  <%= form.submit %>
+<% end %>
+

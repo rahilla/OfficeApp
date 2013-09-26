@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   end
 
   def new
+    @post = Event.new
   end
 
   def create
