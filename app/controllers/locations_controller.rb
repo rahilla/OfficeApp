@@ -19,9 +19,19 @@ class LocationsController < ApplicationController
   def edit
     @location = Location.find(params[:id])
   end
+
   def update
     location = Location.find(params[:id])
     location.update_attributes(params[:location])
     redirect_to(locations_path)
   end
 end
+
+def index
+  if params[:search].present?
+    @locations = Location.near(params[:search], 50, :order => :distance)
+  else
+    @locations = Location.all
+  end
+end
+

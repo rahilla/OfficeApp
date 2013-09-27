@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
  //=gmaps4rails
 //= require_tree .

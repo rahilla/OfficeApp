@@ -1,5 +1,9 @@
 <h2>Create an Event</h2>
-<%= form_for @post do |form| %>
+<%= form_for @event do |form| %>
+Name:
+  <br>
+  <%= form.text_field :name %>
+  <br>
 Sponsor:
   <br>
   <%= form.text_field :sponsor %>

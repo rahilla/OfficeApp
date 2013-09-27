@@ -1,9 +1,17 @@
 <h2>Locations</h2>
 
-<ul>
 <%- @locations.each do |location| %>
+<h3><%= link_to(location.name, location_path(location)  ) %></h3>
+<ul>
     <li><%= location.city %></li>
     <li><%= location.country %></li>
+</ul>
 <% end %>
 </ul>
 
+<%= form_tag locations_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>

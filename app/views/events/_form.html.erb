@@ -1,0 +1,12 @@
+<h2>Create an Event</h2>
+<%= form_for @event do |form| %>
+  Name:
+  <br>
+  <%= form.text_field :name %>
+  <br>
+  Organizer:
+  <br>
+ <%= form.text_field :organizer %>
+  <br>
+  <%= form.submit %>
+<% end %>
