@@ -4,18 +4,19 @@ class LocationsController < ApplicationController
         #   @locations = Location.all
         # end
   def index
-    if params[:search].present?
-      @locations = Location.near(params[:search], 50, :order => :distance)
-    else
-      @locations = Location.all
-    end
+    # if params[:search].present?
+      @locations = Location.last
+    # else
+    #   @locations = Location.all
+    # end
   end
 
         def new
         end
 
           def create
-            Location.create(params[:location])
+            @location = Location.create(address: params[:search])
+
             redirect_to(locations_path)
           end
 

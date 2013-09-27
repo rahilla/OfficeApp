@@ -1,9 +1,11 @@
 <h2>Locations</h2>
 
-<%= form_tag locations_path, :method => :get do %>
+<%= form_tag @location, url: "/locations", :method => :post    do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search Near", :name => nil %>
   </p>
 <% end %>
 
+<% location = @locations.address.gsub(/[" "]/, "+")  %>
+<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= location.downcase  %>">
