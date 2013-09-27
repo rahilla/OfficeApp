@@ -1,15 +1,9 @@
 class Location < ActiveRecord::Base
   attr_accessible :venue, :address, :city, :country, :name, :url, :phone
-
-
+end
 
         has_and_belongs_to_many :events
         has_and_belongs_to_many :users
-
-
-        geocoded_by :address
-        after_validation :geocode, :if => :address_changed?
-        acts_as_gmappable
 
        def gmaps4rails_address
 
