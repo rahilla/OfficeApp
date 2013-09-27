@@ -1,8 +1,15 @@
 class LocationsController < ApplicationController
 
-        def index
-          @locations = Location.all
-        end
+        # def index
+        #   @locations = Location.all
+        # end
+  def index
+    if params[:search].present?
+      @locations = Location.near(params[:search], 50, :order => :distance)
+    else
+      @locations = Location.all
+    end
+  end
 
         def new
         end
@@ -31,8 +38,6 @@ class LocationsController < ApplicationController
             location.update_attributes(params[:location])
             redirect_to(locations_path)
           end
-
-
 
 
 end
